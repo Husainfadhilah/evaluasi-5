@@ -172,3 +172,58 @@ Selisih terbesar: Rp${selisihTerbesar.toFixed(2)}
 Persentase transaksi pertama: ${persentaseTransaksiPertama.toFixed(2)}%
 Harga kopi setelah 3 bulan: Rp${hargaKopiTigaBulan.toFixed(2)}
 `);
+
+// JAWABAN ANE :
+
+// 1. Perhitungan manual transaksi 1:
+// Subtotal = (2 x 15.000) + (1 x 20.000) = Rp50.000
+// Potongan = 10% x 50.000 = Rp5.000
+// Pajak = 11% x (50.000 - 5.000) = Rp4.950
+// Total bayar = 50.000 - 5.000 + 4.950 = Rp49.950
+// Kembalian = 100.000 - 49.950 = Rp50.050
+// Hasil perhitungan manual sama dengan hasil program.
+
+// 2. Sebelum menggunakan ||, gratisAntar1 bernilai false.
+// Sesudah menggunakan &&, gratisAntar1 tetap false.
+// Karena subtotal Rp50.000 dan jumlah item 3, kedua kondisi salah.
+// || membutuhkan minimal satu kondisi benar, sedangkan && membutuhkan
+// kedua kondisi benar. Pada transaksi ini hasilnya tetap sama.
+
+// 3. Dengan tanda kurung:
+// (50000 - 5000) * 0.11 = 4950
+// Tanpa tanda kurung:
+// 50000 - 5000 * 0.11 = 49450
+// Hasil berbeda karena perkalian dikerjakan lebih dahulu.
+
+// 4. Variabel const:
+// kedai, karena object kedai tidak perlu ditugaskan ulang.
+// menu, karena variabel menu tidak perlu ditugaskan ulang.
+// transaksi1, karena data transaksi tidak perlu ditugaskan ulang.
+//
+// Variabel let:
+// subtotal1, karena nilainya bertambah selama perulangan.
+// pendapatanHarian, karena nilainya ditambah menggunakan +=.
+// jumlahTransaksi, karena nilainya bertambah menggunakan ++.
+
+// 5. hargaKopiTigaBulan menggunakan harga * 1.05 ** 3 karena
+// harga naik 5% secara berturut-turut selama tiga bulan.
+// 1.05 ** 3 = 1.157625, yaitu faktor kenaikan selama tiga bulan.
+// 1.05 * 3 = 3.15, yaitu perkalian biasa, bukan kenaikan majemuk.
+
+// 6. Hasil yang sudah tercetak di Console tidak berubah otomatis.
+// Perhitungan harus dijalankan kembali setelah harga diubah.
+//
+// Contoh:
+// const menuBukti = [{ nama: "Kopi", harga: 15000 }];
+
+// let hargaAwal = menuBukti[0].harga * 1.05 ** 3;
+// console.log("Harga awal:", hargaAwal);
+
+// menuBukti[0].harga = 20000;
+
+// let hargaBaru = menuBukti[0].harga * 1.05 ** 3;
+// console.log("Harga baru:", hargaBaru);
+
+// Harga awal = 17364.375
+// Harga baru = 23152.5
+// Hasil berubah karena harga baru dihitung ulang setelah data diubah.
