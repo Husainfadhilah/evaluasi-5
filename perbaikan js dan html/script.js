@@ -63,3 +63,55 @@ console.log(
     itemGenap,
     transaksiSelesai
 );
+
+/*
+CATATAN BUG
+
+1. Komentar banyak baris tidak ditutup
+   Jenis: Menghentikan program dengan error.
+   Penyebab: Komentar pembuka /* tidak ditutup dengan * /.
+
+2. Tipe data jumlahRoti salah
+   Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: Nilai "2" bertipe string sehingga penjumlahan dengan angka 3 menghasilkan "32", bukan 5.
+
+3. Nama variabel jumlahkopi salah
+   Jenis: Menghentikan program dengan error.
+   Penyebab: JavaScript membedakan huruf besar dan kecil. Seharusnya jumlahKopi.
+
+4. Rumus pajak salah
+   Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: Kurang tanda kurung sehingga pajak tidak dihitung dari subtotal setelah diskon.
+
+5. Titik koma pada totalBayar tidak ada
+   Jenis: Tidak error.
+   Penyebab: JavaScript dapat menambahkan titik koma secara otomatis, tetapi penulisannya kurang rapi.
+
+6. Operator perbandingan uangCukup salah
+   Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: Operator = memberikan nilai, bukan membandingkan apakah uang pembayaran cukup.
+
+7. Rumus kembalian terbalik
+   Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: Total bayar dikurangi uang pembayaran, seharusnya uang pembayaran dikurangi total bayar.
+
+8. Pengecekan bilangan genap salah
+   Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: Operator % 2 === 1 memeriksa bilangan ganjil, bukan genap.
+
+9. Nilai transaksiSelesai tidak bertambah
+   Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: transaksiSelesai + 1 tidak menyimpan hasil penjumlahan ke variabel.
+
+10. Variabel namaKedai dideklarasikan ulang
+    Jenis: Menghentikan program dengan error.
+    Penyebab: Variabel yang sudah dideklarasikan dengan const tidak bisa dideklarasikan ulang menggunakan let dalam cakupan yang sama.
+
+11. Nama kedai diubah padahal menggunakan const
+    Jenis: Menghentikan program dengan error.
+    Penyebab: Variabel const tidak dapat diberi nilai baru setelah deklarasi.
+
+12. Tarif pajak diubah padahal menggunakan const
+    Jenis: Menghentikan program dengan error.
+    Penyebab: Variabel TARIF_PAJAK dideklarasikan dengan const sehingga nilainya tidak dapat diubah dari 0.11 menjadi 0.12.
+*/
