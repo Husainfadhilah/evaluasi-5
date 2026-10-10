@@ -71,3 +71,43 @@ console.log(
     itemGenap,
     transaksiSelesai
 );
+
+/*
+CATATAN BUG
+
+1. Jenis: Menghentikan program dengan error.
+   Penyebab: Komentar banyak baris tidak ditutup dengan */ /* sehingga seluruh kode dianggap komentar.
+
+2. Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: jumlahRoti menggunakan string "2", bukan angka 2.
+
+3. Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: Penjumlahan angka dengan string dapat menghasilkan penggabungan teks, yaitu "32".
+
+4. Jenis: Menghentikan program dengan error.
+   Penyebab: Nama variabel jumlahkopi berbeda dengan jumlahKopi karena JavaScript membedakan huruf besar dan kecil.
+
+5. Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: Perhitungan subtotal harus menggunakan harga setiap produk dikalikan jumlahnya, lalu dijumlahkan.
+
+6. Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: Pajak dihitung hanya dari diskon dikalikan tarif pajak, bukan dari subtotal setelah diskon.
+
+7. Jenis: Tidak error, tetapi penulisan kurang rapi.
+   Penyebab: Pernyataan totalBayar tidak diakhiri titik koma. JavaScript biasanya tetap menjalankannya, jadi ini bukan error yang menghentikan program.
+
+8. Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: Operator = memberikan nilai, bukan membandingkan apakah uang cukup. Seharusnya menggunakan >=.
+
+9. Jenis: Tidak error, tetapi hasil salah.
+   Penyebab: Pengurangan terbalik. Kembalian dihitung dari uang bayar dikurangi total bayar.
+
+10. Jenis: Tidak error, tetapi hasil salah.
+    Penyebab: Kondisi menggunakan === 1, yang memeriksa bilangan ganjil, bukan genap.
+
+11. Jenis: Tidak error, tetapi hasil salah.
+    Penyebab: Ekspresi transaksiSelesai + 1 tidak menyimpan hasilnya kembali ke variabel.
+
+12. Jenis: Menghentikan program dengan error jika menggunakan let namaKedai yang sama dalam lingkup yang sama.
+    Penyebab: Variabel namaKedai sudah dideklarasikan menggunakan const dan dideklarasikan ulang menggunakan let. Selain itu, nilai const tidak dapat diubah.
+    */
